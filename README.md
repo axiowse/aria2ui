@@ -9,16 +9,16 @@ Aria2结合AriaNg界面，使用docker构建的私人下载器
 1. git pull https://github.com/axiowse/aria2ui.git
 2. cd aria2ui
 3. docker build --tag=aria2ui .
-4. docker container run -idt --name=aria2ui -p 8080:80 -p 6800:6800 -e aria2ui
-5. docker container run -idt --name=aria2ui -p 8080:80 -p 6800:6800 -e RPC_SECRET=123456 aria2ui
-6. 在浏览器中打开 http://localhost:8080 
+4. docker container run -idt --name=aria2ui -p 9200:80 -p 9201:6800 -e aria2ui
+5. docker container run -idt --name=aria2ui -p 9200:80 -p 9201:6800 -e RPC_SECRET=123456 aria2ui
+6. 在浏览器中打开 http://localhost:9200 
 
 ## 直接使用Docker镜像
 步骤：**其中第2步和第3步任选其一。**
 1. docker pull axiowse/aria2ui
-2. docker container run -idt --name=aria2ui -p 8080:80 -p 6800:6800 -e aria2ui
-3. docker container run -idt --name=aria2ui -p 8080:80 -p 6800:6800 -e RPC_SECRET=123456 aria2ui
-4. 在浏览器中打开 http://localhost:8080
+2. docker container run -idt --name=aria2ui -p 9200:80 -p 9201:6800 -e aria2ui
+3. docker container run -idt --name=aria2ui -p 9200:80 -p 9201:6800 -e RPC_SECRET=123456 aria2ui
+4. 在浏览器中打开 http://localhost:9200
 
 # 配置
 
