@@ -8,5 +8,6 @@
     --rpc-allow-origin-all=true \
     --rpc-listen-all=true \
     --rpc-secret=$RPC_SECRET \
+    --max-connection-per-server=5 \
     --rpc-listen-port=6800 && \
     nginx -g 'daemon off;'
