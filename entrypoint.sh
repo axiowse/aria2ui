@@ -1,13 +1,16 @@
 #!/bin/sh
 
-/usr/bin/aria2c \
+set "" \
     --daemon \
     --continue=true \
-    --dir=/opt/aria2/downloads \
     --enable-rpc=true \
     --rpc-allow-origin-all=true \
     --rpc-listen-all=true \
-    --rpc-secret=$RPC_SECRET \
     --max-connection-per-server=5 \
-    --rpc-listen-port=6800 && \
-    nginx -g 'daemon off;'
+    --rpc-listen-port=6800
+
+if [ ${#RPC_SECRET} -gt 0 ]; then
+    set -- "$@" --rpc-secret=$RPC_SECRET
+fi
+
+/usr/bin/aria2c $@ && nginx -g 'daemon off;'
